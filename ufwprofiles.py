@@ -1,11 +1,11 @@
 import os, sys
 import configparser
-from simple_parameters import SimpleParameters
+from simple_parameters import simple_parameters
 
 
 def main():
     directory = "/etc/ufw/applications.d/"
-    params = SimpleParameters('ufwprofiles.json')
+    params = simple_parameters.SimpleParser('ufwprofiles.json')
     options, args = params.resolve_parameters(sys.argv)
 
     if options.appname is None and options.title is None:
