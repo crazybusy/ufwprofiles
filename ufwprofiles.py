@@ -8,7 +8,7 @@ def main():
     params = SimpleParameters('ufwprofiles.json')
     options, args = params.resolve_parameters(sys.argv)
 
-    if options.appname is not None and options.title is not None:
+    if options.appname is None and options.title is None:
         print("No title specified for the app")
         return 
     
