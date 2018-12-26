@@ -4,6 +4,7 @@ from simple_parameters import SimpleParameters
 
 
 def main():
+    directory = "/etc/ufw/applications.d/"
     params = SimpleParameters('ufwprofiles.json')
     options, args = params.resolve_parameters(sys.argv)
 
@@ -23,7 +24,8 @@ def main():
         print("No ports specified for the app")    
     else:
         # Create the configuration file as it doesn't exist yet
-        cfgfile = open(configfile_name, 'w')
+        cfgfile = open(
+            os.path.join(directory, configfile_name), 'w')
 
         # Add content to the file
         Config = configparser.ConfigParser()
