@@ -1,7 +1,7 @@
 {
 "version": "1.0",
 "description": "Command to create ufw profile from command line parameters",
-
+"deps":["simple_parameters"],
 "parameters":
 [
 {"short": "-n", "long":"--appname", "type":"string"},
